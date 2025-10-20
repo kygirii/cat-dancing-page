@@ -1,0 +1,234 @@
+.dancing-cat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+}
+
+.cat-wrapper {
+  perspective: 1000px;
+  transition: all 0.3s ease;
+}
+
+.cat-image {
+  width: 200px;
+  height: 200px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  will-change: transform;
+}
+
+/* Dancing Animation */
+.cat-wrapper.dancing {
+  animation: dance 3s infinite ease-in-out;
+}
+
+.cat-wrapper.dancing .cat-image {
+  animation:
+    bounce 0.6s infinite ease-in-out,
+    rotate 2s infinite ease-in-out,
+    wiggle 1s infinite ease-in-out;
+}
+
+/* Keyframe Animations */
+@keyframes dance {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-20px) scale(1.05);
+  }
+  50% {
+    transform: translateY(0) scale(0.95);
+  }
+  75% {
+    transform: translateY(-10px) scale(1.02);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) rotateZ(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotateZ(5deg);
+  }
+}
+
+@keyframes rotate {
+  0%, 100% {
+    transform: rotateY(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: rotateY(180deg) rotateZ(-10deg);
+  }
+  50% {
+    transform: rotateY(360deg) rotateZ(0deg);
+  }
+  75% {
+    transform: rotateY(180deg) rotateZ(10deg);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+}
+
+/* Control Button */
+.control-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 3px solid white;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.control-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.control-button:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Performance Optimization */
+.cat-wrapper,
+.cat-image {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Responsive Design */
+
+/* Mobile Devices (up to 768px) */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .cat-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .control-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+
+  .dancing-cat-container {
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  @keyframes dance {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    25% {
+      transform: translateY(-15px) scale(1.05);
+    }
+    50% {
+      transform: translateY(0) scale(0.95);
+    }
+    75% {
+      transform: translateY(-8px) scale(1.02);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0) rotateZ(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotateZ(5deg);
+    }
+  }
+}
+
+/* Tablets (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .app-title {
+    font-size: 2.5rem;
+  }
+
+  .cat-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .control-button {
+    padding: 0.9rem 2.2rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Large Desktops (1025px and up) */
+@media (min-width: 1025px) {
+  .cat-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .app-title {
+    font-size: 3.5rem;
+  }
+
+  @keyframes dance {
+    0%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    25% {
+      transform: translateY(-30px) scale(1.1);
+    }
+    50% {
+      transform: translateY(0) scale(0.9);
+    }
+    75% {
+      transform: translateY(-15px) scale(1.05);
+    }
+  }
+}
+
+/* Touch Interface Support */
+@media (hover: none) and (pointer: coarse) {
+  .control-button:hover {
+    transform: none;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .control-button:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Reduce Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cat-wrapper.dancing,
+  .cat-wrapper.dancing .cat-image {
+    animation: none;
+  }
+
+  .control-button {
+    transition: none;
+  }
+}

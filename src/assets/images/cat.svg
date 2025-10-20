@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Cat Body -->
+  <ellipse cx="100" cy="120" rx="45" ry="55" fill="#FF9800" stroke="#E65100" stroke-width="2"/>
+
+  <!-- Cat Head -->
+  <circle cx="100" cy="70" r="35" fill="#FF9800" stroke="#E65100" stroke-width="2"/>
+
+  <!-- Left Ear -->
+  <path d="M 75 45 L 65 20 L 85 50 Z" fill="#FF9800" stroke="#E65100" stroke-width="2"/>
+  <path d="M 75 45 L 70 30 L 82 48 Z" fill="#FFB74D"/>
+
+  <!-- Right Ear -->
+  <path d="M 125 45 L 135 20 L 115 50 Z" fill="#FF9800" stroke="#E65100" stroke-width="2"/>
+  <path d="M 125 45 L 130 30 L 118 48 Z" fill="#FFB74D"/>
+
+  <!-- Eyes -->
+  <ellipse cx="88" cy="65" rx="8" ry="12" fill="#2E7D32"/>
+  <ellipse cx="112" cy="65" rx="8" ry="12" fill="#2E7D32"/>
+  <ellipse cx="88" cy="68" rx="4" ry="6" fill="#000"/>
+  <ellipse cx="112" cy="68" rx="4" ry="6" fill="#000"/>
+
+  <!-- Nose -->
+  <path d="M 100 75 L 95 82 L 105 82 Z" fill="#E65100"/>
+
+  <!-- Mouth -->
+  <path d="M 100 82 Q 90 88 85 85" stroke="#E65100" stroke-width="2" fill="none"/>
+  <path d="M 100 82 Q 110 88 115 85" stroke="#E65100" stroke-width="2" fill="none"/>
+
+  <!-- Whiskers Left -->
+  <line x1="60" y1="70" x2="80" y2="68" stroke="#E65100" stroke-width="1.5"/>
+  <line x1="60" y1="75" x2="80" y2="75" stroke="#E65100" stroke-width="1.5"/>
+  <line x1="60" y1="80" x2="80" y2="82" stroke="#E65100" stroke-width="1.5"/>
+
+  <!-- Whiskers Right -->
+  <line x1="140" y1="70" x2="120" y2="68" stroke="#E65100" stroke-width="1.5"/>
+  <line x1="140" y1="75" x2="120" y2="75" stroke="#E65100" stroke-width="1.5"/>
+  <line x1="140" y1="80" x2="120" y2="82" stroke="#E65100" stroke-width="1.5"/>
+
+  <!-- Belly -->
+  <ellipse cx="100" cy="130" rx="25" ry="35" fill="#FFE0B2"/>
+
+  <!-- Paws -->
+  <ellipse cx="80" cy="170" rx="12" ry="8" fill="#FF9800" stroke="#E65100" stroke-width="2"/>
+  <ellipse cx="120" cy="170" rx="12" ry="8" fill="#FF9800" stroke="#E65100" stroke-width="2"/>
+
+  <!-- Tail -->
+  <path d="M 140 130 Q 160 120 165 100 Q 168 85 160 75"
+        stroke="#FF9800" stroke-width="18" fill="none"
+        stroke-linecap="round"/>
+</svg>
